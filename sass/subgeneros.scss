@@ -1,0 +1,386 @@
+@import 'variables';
+@import 'mixins';
+
+// Base específico para subgéneros
+body {
+  font-family: $font-primary;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+// Hero section para subgéneros
+.hero-subgenres {
+  background: $gradient-rock;
+  @include dark-overlay(0.3);
+  padding: 120px 0 80px;
+  color: $text-light;
+  position: relative;
+  
+  .hero-title {
+    font-size: 4rem;
+    font-weight: $font-weight-bold;
+    @include rock-text-shadow;
+    margin-bottom: 1rem;
+    @include fade-in-up;
+    
+    @include respond-below($breakpoint-md) {
+      font-size: 2.8rem;
+    }
+  }
+  
+  .hero-subtitle {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    @include fade-in-up;
+    animation-delay: 0.3s;
+  }
+}
+
+// Grid de subgéneros
+.subgenres-grid {
+  background: $light-bg;
+  
+  .subgenre-card {
+    background: white;
+    border-radius: $border-radius-xl;
+    box-shadow: $box-shadow;
+    overflow: hidden;
+    transition: $transition-base;
+    height: 100%;
+    margin-bottom: 2rem;
+    
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+    
+    // Colores específicos para cada subgénero
+    &.hard-rock {
+      border-top: 5px solid #e74c3c;
+      
+      .subgenre-info h3::after {
+        background: #e74c3c;
+      }
+    }
+    
+    &.heavy-metal {
+      border-top: 5px solid #2c3e50;
+      
+      .subgenre-info h3::after {
+        background: #2c3e50;
+      }
+    }
+    
+    &.punk-rock {
+      border-top: 5px solid #f39c12;
+      
+      .subgenre-info h3::after {
+        background: #f39c12;
+      }
+    }
+    
+    &.prog-rock {
+      border-top: 5px solid #9b59b6;
+      
+      .subgenre-info h3::after {
+        background: #9b59b6;
+      }
+    }
+    
+    &.grunge {
+      border-top: 5px solid #27ae60;
+      
+      .subgenre-info h3::after {
+        background: #27ae60;
+      }
+    }
+    
+    &.britpop {
+      border-top: 5px solid #3498db;
+      
+      .subgenre-info h3::after {
+        background: #3498db;
+      }
+    }
+    
+    .subgenre-header {
+      position: relative;
+      
+      .subgenre-image {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: $transition-base;
+        }
+        
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.4);
+        }
+      }
+      
+      .subgenre-info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem;
+        color: white;
+        z-index: 2;
+        
+        h3 {
+          font-size: 1.8rem;
+          font-weight: $font-weight-bold;
+          margin-bottom: 0.5rem;
+          position: relative;
+          
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            border-radius: 2px;
+          }
+        }
+        
+        .era-badge {
+          background: rgba(255, 255, 255, 0.9);
+          color: $secondary-color;
+          padding: 4px 12px;
+          border-radius: $border-radius;
+          font-size: 0.85rem;
+          font-weight: $font-weight-bold;
+          backdrop-filter: blur(10px);
+        }
+      }
+      
+      &:hover {
+        .subgenre-image img {
+          transform: scale(1.1);
+        }
+      }
+    }
+    
+    .subgenre-content {
+      padding: 2rem;
+      
+      > p {
+        color: $text-muted;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        font-size: 1.05rem;
+      }
+      
+      h5 {
+        color: $secondary-color;
+        font-weight: $font-weight-bold;
+        margin: 1.5rem 0 1rem;
+        font-size: 1.1rem;
+        position: relative;
+        
+        &::before {
+          content: '▸';
+          color: $accent-color;
+          margin-right: 0.5rem;
+        }
+      }
+      
+      ul {
+        list-style: none;
+        margin-bottom: 1.5rem;
+        
+        li {
+          padding: 0.5rem 0;
+          color: $text-muted;
+          font-size: 0.95rem;
+          border-bottom: 1px solid #f1f1f1;
+          transition: $transition-base;
+          
+          &:hover {
+            color: $secondary-color;
+            padding-left: 10px;
+          }
+          
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+      
+      .bands-section {
+        .band-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+          
+          .band-tag {
+            background: $gradient-fire;
+            color: white;
+            padding: 6px 12px;
+            border-radius: $border-radius-xl;
+            font-size: 0.8rem;
+            font-weight: $font-weight-bold;
+            transition: $transition-base;
+            cursor: pointer;
+            
+            &:hover {
+              transform: scale(1.05);
+              box-shadow: $box-shadow;
+            }
+          }
+        }
+      }
+      
+      .classic-songs {
+        background: #f8f9fa;
+        padding: 1rem;
+        border-radius: $border-radius-lg;
+        border-left: 4px solid $accent-color;
+        
+        h6 {
+          color: $secondary-color;
+          font-weight: $font-weight-bold;
+          margin-bottom: 0.5rem;
+          font-size: 0.95rem;
+        }
+        
+        p {
+          color: $text-muted;
+          font-size: 0.9rem;
+          margin: 0;
+          font-style: italic;
+        }
+      }
+    }
+  }
+}
+
+// Evolution section
+.evolution-section {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: $border-radius-xl;
+  box-shadow: $box-shadow-lg;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: $gradient-fire;
+  }
+  
+  h2 {
+    @include gradient-text($gradient-rock);
+    font-weight: $font-weight-bold;
+    margin-bottom: 1rem;
+  }
+  
+  .mini-genre-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 1.5rem;
+    border-radius: $border-radius-lg;
+    text-align: center;
+    transition: $transition-base;
+    border: 2px solid transparent;
+    height: 100%;
+    
+    &:hover {
+      transform: translateY(-8px);
+      border-color: $accent-color;
+      box-shadow: $box-shadow-lg;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    }
+    
+    h5 {
+      color: $secondary-color;
+      font-weight: $font-weight-bold;
+      margin-bottom: 0.75rem;
+      font-size: 1.2rem;
+    }
+    
+    p {
+      color: $text-muted;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    
+    .year-tag {
+      background: $gradient-fire;
+      color: white;
+      padding: 4px 12px;
+      border-radius: $border-radius-xl;
+      font-size: 0.8rem;
+      font-weight: $font-weight-bold;
+      display: inline-block;
+    }
+  }
+}
+
+// Responsive adjustments
+@include respond-below($breakpoint-lg) {
+  .subgenre-card {
+    .subgenre-content {
+      .bands-section .band-tags {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@include respond-below($breakpoint-md) {
+  .hero-subgenres {
+    padding: 100px 0 60px;
+    text-align: center;
+  }
+  
+  .subgenres-grid {
+    .subgenre-card {
+      margin-bottom: 2rem;
+      
+      .subgenre-header {
+        .subgenre-info {
+          padding: 1rem;
+          
+          h3 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+      
+      .subgenre-content {
+        padding: 1.5rem;
+        
+        .bands-section .band-tags {
+          justify-content: center;
+        }
+      }
+    }
+  }
+  
+  .evolution-section {
+    padding: 2rem 1rem;
+    
+    .mini-genre-card {
+      margin-bottom: 1rem;
+    }
+  }
+}

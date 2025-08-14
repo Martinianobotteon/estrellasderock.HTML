@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Los conciertos más históricos del rock - Woodstock, Live Aid, Monterey y otros momentos épicos">
+    <meta name="keywords" content="conciertos, rock, Woodstock, Live Aid, festivales, música en vivo">
+    <meta name="author" content="Rock Legends">
+    <title>Conciertos Históricos del Rock - Rock Legends</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/conciertos.css">
+</head>
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand rock-title" href="index.html">
+                    <i class="fas fa-guitar me-2"></i>Rock Legends
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="guitarras.html">Guitarras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="conciertos.html">Conciertos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="historia.html">Historia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="subgeneros.html">Subgéneros</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-concerts">
+            <div class="container">
+                <div class="row justify-content-center text-center">
+                    <div class="col-lg-8">
+                        <h1 class="hero-title">Conciertos Históricos</h1>
+                        <p class="hero-subtitle">Los momentos que marcaron la historia del rock en vivo</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carousel de conciertos principales -->
+        <section class="concerts-carousel py-5">
+            <div class="container">
+                <div id="concertsCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#concertsCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#concertsCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#concertsCarousel" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#concertsCarousel" data-bs-slide-to="3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="carousel-content">
+                                <img src="https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg" class="d-block w-100" alt="Woodstock 1969">
+                                <div class="carousel-caption">
+                                    <div class="concert-info">
+                                        <h2>Woodstock 1969</h2>
+                                        <p class="concert-date">15-18 Agosto 1969</p>
+                                        <p class="concert-location">Bethel, Nueva York, Estados Unidos</p>
+                                        <p class="concert-description">El festival que definió una generación. 400,000 personas se reunieron para celebrar música, paz y amor en medio de la Guerra de Vietnam.</p>
+                                        <div class="concert-artists">
+                                            <strong>Artistas destacados:</strong> Jimi Hendrix, Janis Joplin, The Who, Santana, Joe Cocker
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-content">
+                                <img src="https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg" class="d-block w-100" alt="Live Aid 1985">
+                                <div class="carousel-caption">
+                                    <div class="concert-info">
+                                        <h2>Live Aid 1985</h2>
+                                        <p class="concert-date">13 Julio 1985</p>
+                                        <p class="concert-location">Londres y Filadelfia</p>
+                                        <p class="concert-description">El concierto benéfico más grande de la historia. Transmitido en vivo a 1.9 billones de personas en 150 países para ayudar a combatir la hambruna en África.</p>
+                                        <div class="concert-artists">
+                                            <strong>Artistas destacados:</strong> Queen, U2, David Bowie, Led Zeppelin, The Who, Elton John
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-content">
+                                <img src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg" class="d-block w-100" alt="Monterey Pop Festival">
+                                <div class="carousel-caption">
+                                    <div class="concert-info">
+                                        <h2>Monterey Pop Festival 1967</h2>
+                                        <p class="concert-date">16-18 Junio 1967</p>
+                                        <p class="concert-location">Monterey, California, Estados Unidos</p>
+                                        <p class="concert-description">El "Summer of Love" en acción. Este festival introdujo al mundo a nuevos talentos y consolidó la contracultura hippie.</p>
+                                        <div class="concert-artists">
+                                            <strong>Artistas destacados:</strong> Jimi Hendrix, Janis Joplin, The Who, Otis Redding, The Mamas & The Papas
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="carousel-content">
+                                <img src="https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg" class="d-block w-100" alt="Altamont 1969">
+                                <div class="carousel-caption">
+                                    <div class="concert-info">
+                                        <h2>Altamont Free Concert 1969</h2>
+                                        <p class="concert-date">6 Diciembre 1969</p>
+                                        <p class="concert-location">Altamont, California, Estados Unidos</p>
+                                        <p class="concert-description">El concierto gratuito de los Rolling Stones que marcó el final de la era hippie debido a los violentos incidentes ocurridos.</p>
+                                        <div class="concert-artists">
+                                            <strong>Artistas destacados:</strong> Rolling Stones, Jefferson Airplane, Santana, Crosby Stills Nash & Young
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#concertsCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#concertsCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline de conciertos -->
+        <section class="timeline-section py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Línea de Tiempo de Conciertos Épicos</h2>
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1965</div>
+                            <h3>Bob Dylan Goes Electric</h3>
+                            <p><strong>Newport Folk Festival</strong></p>
+                            <p>Dylan causa controversia al tocar con guitarra eléctrica, marcando el nacimiento del folk rock.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1967</div>
+                            <h3>Monterey Pop Festival</h3>
+                            <p><strong>Monterey, California</strong></p>
+                            <p>Jimi Hendrix quema su guitarra y se convierte en una leyenda. The Who destruye sus instrumentos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1969</div>
+                            <h3>Woodstock</h3>
+                            <p><strong>Bethel, Nueva York</strong></p>
+                            <p>La performance de Hendrix del himno nacional americano se convierte en un momento histórico.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1973</div>
+                            <h3>Led Zeppelin en Madison Square Garden</h3>
+                            <p><strong>Nueva York</strong></p>
+                            <p>Tres noches consecutivas que demostraron por qué Led Zeppelin era la banda más grande del mundo.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1985</div>
+                            <h3>Live Aid</h3>
+                            <p><strong>Londres y Filadelfia</strong></p>
+                            <p>Queen roba el show con una presentación de 20 minutos que muchos consideran la mejor actuación en vivo.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1991</div>
+                            <h3>Nirvana MTV Unplugged</h3>
+                            <p><strong>Sony Studios, Nueva York</strong></p>
+                            <p>Una performance íntima que redefinió la música acústica y se convirtió en el álbum póstumo más exitoso.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de momentos icónicos -->
+        <section class="iconic-moments py-5 bg-dark text-light">
+            <div class="container">
+                <h2 class="text-center mb-5">Momentos Icónicos</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="moment-card">
+                            <div class="moment-image">
+                                <img src="https://images.pexels.com/photos/1407322/pexels-photo-1407322.jpeg" alt="Hendrix quema guitarra" class="img-fluid">
+                            </div>
+                            <div class="moment-content">
+                                <h4>Hendrix Quema su Stratocaster</h4>
+                                <p><strong>Monterey 1967</strong></p>
+                                <p>Después de tocar "Wild Thing", Jimi Hendrix roció fluido para encendedor sobre su Stratocaster y la prendió fuego, creando una de las imágenes más icónicas del rock.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="moment-card">
+                            <div class="moment-image">
+                                <img src="https://images.pexels.com/photos/1134687/pexels-photo-1134687.jpeg" alt="Queen Live Aid" class="img-fluid">
+                            </div>
+                            <div class="moment-content">
+                                <h4>Queen Domina Live Aid</h4>
+                                <p><strong>Wembley Stadium 1985</strong></p>
+                                <p>20 minutos que cambiaron todo. Freddie Mercury y Queen entregaron la mejor performance de sus carreras ante 72,000 personas en Wembley.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="moment-card">
+                            <div class="moment-image">
+                                <img src="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg" alt="The Who destruye instrumentos" class="img-fluid">
+                            </div>
+                            <div class="moment-content">
+                                <h4>The Who Destruye Todo</h4>
+                                <p><strong>Monterey 1967</strong></p>
+                                <p>Pete Townshend y Keith Moon destruyeron completamente su equipo al final del show, estableciendo una tradición que definió el rock rebelde.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="moment-card">
+                            <div class="moment-image">
+                                <img src="https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg" alt="Woodstock lluvia" class="img-fluid">
+                            </div>
+                            <div class="moment-content">
+                                <h4>La Lluvia de Woodstock</h4>
+                                <p><strong>Bethel 1969</strong></p>
+                                <p>A pesar de la lluvia torrencial y el barro, 400,000 personas permanecieron unidas por la música, creando un sentido de comunidad nunca antes visto.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="fas fa-guitar me-2"></i>Rock Legends</h5>
+                    <p>La historia del rock en tus manos</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h6>Síguenos</h6>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="text-center">
+                <small>&copy; 2024 Rock Legends. Todos los derechos reservados.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

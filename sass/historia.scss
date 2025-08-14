@@ -1,0 +1,332 @@
+@import 'variables';
+@import 'mixins';
+
+// Base específico para historia
+body {
+  font-family: $font-primary;
+  background: linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
+}
+
+// Hero section para historia
+.hero-history {
+  background: $gradient-dark;
+  @include dark-overlay(0.4);
+  padding: 120px 0 80px;
+  color: $text-light;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 50px solid $secondary-color;
+  }
+  
+  .hero-title {
+    font-size: 4.5rem;
+    font-weight: $font-weight-bold;
+    @include rock-text-shadow;
+    margin-bottom: 1rem;
+    @include fade-in-up;
+    
+    @include respond-below($breakpoint-md) {
+      font-size: 3rem;
+    }
+  }
+  
+  .hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    @include fade-in-up;
+    animation-delay: 0.3s;
+  }
+}
+
+// Content sections
+.history-content {
+  background: $light-bg;
+  
+  .history-section {
+    margin-bottom: 5rem;
+    
+    .decade-marker {
+      background: $gradient-fire;
+      color: white;
+      padding: 12px 24px;
+      border-radius: $border-radius-xl;
+      font-weight: $font-weight-bold;
+      font-size: 1.2rem;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: $box-shadow;
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 20px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #f5576c;
+      }
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      color: $secondary-color;
+      font-weight: $font-weight-bold;
+      margin-bottom: 1.5rem;
+      @include gradient-text($gradient-rock);
+    }
+    
+    .lead {
+      font-size: 1.3rem;
+      color: $text-muted;
+      margin-bottom: 2rem;
+      font-weight: $font-weight-light;
+      line-height: 1.6;
+      border-left: 4px solid $accent-color;
+      padding-left: 1.5rem;
+    }
+    
+    h4 {
+      color: $secondary-color;
+      font-weight: $font-weight-bold;
+      margin: 2rem 0 1rem;
+      font-size: 1.4rem;
+      position: relative;
+      
+      &::before {
+        content: '♪';
+        color: $accent-color;
+        margin-right: 0.5rem;
+        font-size: 1.2rem;
+      }
+    }
+    
+    p {
+      color: $text-dark;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      
+      strong {
+        color: $secondary-color;
+        font-weight: $font-weight-bold;
+      }
+    }
+    
+    .key-artists {
+      background: white;
+      padding: 1.5rem;
+      border-radius: $border-radius-lg;
+      box-shadow: $box-shadow;
+      margin-top: 2rem;
+      
+      h5 {
+        color: $secondary-color;
+        font-weight: $font-weight-bold;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+      
+      ul {
+        list-style: none;
+        
+        li {
+          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+          padding: 0.75rem 1rem;
+          margin-bottom: 0.5rem;
+          border-radius: $border-radius;
+          border-left: 4px solid $accent-color;
+          transition: $transition-base;
+          
+          &:hover {
+            transform: translateX(10px);
+            box-shadow: $box-shadow;
+          }
+        }
+      }
+    }
+    
+    img {
+      border-radius: $border-radius-lg;
+      box-shadow: $box-shadow-lg;
+      transition: $transition-base;
+      
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+// Legacy section especial
+.legacy-section {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: $border-radius-xl;
+  box-shadow: $box-shadow-lg;
+  margin-top: 3rem;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+      radial-gradient(circle at 25% 25%, rgba(231, 76, 60, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(52, 73, 94, 0.1) 0%, transparent 50%);
+    animation: rotate 20s linear infinite;
+    z-index: 0;
+  }
+  
+  & > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    @include gradient-text($gradient-rock);
+    margin-bottom: 2rem;
+  }
+  
+  .legacy-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-radius: $border-radius-lg;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    transition: $transition-base;
+    height: 100%;
+    
+    &:hover {
+      transform: translateY(-10px);
+      border-color: $accent-color;
+      box-shadow: $box-shadow-lg;
+    }
+    
+    .fas {
+      font-size: 3rem;
+      color: $accent-color;
+      margin-bottom: 1.5rem;
+      @include music-pulse;
+    }
+    
+    h4 {
+      color: $secondary-color;
+      font-weight: $font-weight-bold;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      
+      &::before {
+        display: none;
+      }
+    }
+    
+    p {
+      color: $text-muted;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Responsive adjustments
+@include respond-below($breakpoint-lg) {
+  .history-section {
+    .row {
+      text-align: center;
+      
+      .col-lg-6:first-child {
+        order: 2;
+      }
+      
+      .col-lg-6:last-child {
+        order: 1;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+@include respond-below($breakpoint-md) {
+  .hero-history {
+    padding: 100px 0 80px;
+    text-align: center;
+    
+    &::after {
+      display: none;
+    }
+  }
+  
+  .history-content {
+    .history-section {
+      margin-bottom: 3rem;
+      
+      h2 {
+        font-size: 2rem;
+        text-align: center;
+      }
+      
+      .lead {
+        font-size: 1.1rem;
+        text-align: center;
+        border-left: none;
+        border-top: 4px solid $accent-color;
+        padding-left: 0;
+        padding-top: 1rem;
+      }
+      
+      .decade-marker {
+        display: block;
+        text-align: center;
+        margin: 0 auto 1.5rem;
+        
+        &::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+  
+  .legacy-section {
+    padding: 2rem 1rem;
+    
+    .legacy-card {
+      margin-bottom: 1.5rem;
+      
+      .fas {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,228 @@
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes musicPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+  min-height: 100vh;
+}
+
+.hero-guitars {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  padding: 100px 0 80px;
+  color: #ecf0f1;
+}
+.hero-guitars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+.hero-guitars > * {
+  position: relative;
+  z-index: 2;
+}
+.hero-guitars .hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+@media (max-width: 767px) {
+  .hero-guitars .hero-title {
+    font-size: 2.5rem;
+  }
+}
+.hero-guitars .hero-subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+.guitars-gallery {
+  background: #f8f9fa;
+}
+.guitars-gallery .guitar-card {
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  height: 100%;
+}
+.guitars-gallery .guitar-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+.guitars-gallery .guitar-card .guitar-image {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+.guitars-gallery .guitar-card .guitar-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.guitars-gallery .guitar-card .guitar-image .guitar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(231, 76, 60, 0.8);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.guitars-gallery .guitar-card .guitar-image .guitar-overlay .guitar-info {
+  color: white;
+  font-size: 2rem;
+  transform: scale(0.8);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.guitars-gallery .guitar-card .guitar-image:hover img {
+  transform: scale(1.1);
+}
+.guitars-gallery .guitar-card .guitar-image:hover .guitar-overlay {
+  opacity: 1;
+}
+.guitars-gallery .guitar-card .guitar-image:hover .guitar-overlay .guitar-info {
+  transform: scale(1);
+}
+.guitars-gallery .guitar-card .guitar-content {
+  padding: 1.5rem;
+}
+.guitars-gallery .guitar-card .guitar-content h3 {
+  font-size: 1.4rem;
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+.guitars-gallery .guitar-card .guitar-content .guitar-description {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+.guitars-gallery .guitar-card .guitar-content .famous-users {
+  margin-bottom: 1.5rem;
+}
+.guitars-gallery .guitar-card .guitar-content .famous-users h5 {
+  color: #2c3e50;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+.guitars-gallery .guitar-card .guitar-content .famous-users ul {
+  list-style: none;
+}
+.guitars-gallery .guitar-card .guitar-content .famous-users ul li {
+  padding: 0.25rem 0;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+.guitars-gallery .guitar-card .guitar-content .famous-users ul li .fas {
+  color: #f39c12;
+  margin-right: 0.5rem;
+}
+.guitars-gallery .guitar-card .guitar-content .guitar-specs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.guitars-gallery .guitar-card .guitar-content .guitar-specs .spec-badge {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 0.375rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.guitar-facts {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  margin-top: 3rem;
+}
+.guitar-facts h2 {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+.guitar-facts .fact-card {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  height: 100%;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.guitar-facts .fact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+.guitar-facts .fact-card .fas {
+  font-size: 2.5rem;
+  color: #f39c12;
+  margin-bottom: 1rem;
+}
+.guitar-facts .fact-card h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.guitar-facts .fact-card p {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.navbar {
+  background: rgba(26, 26, 26, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 991px) {
+  .guitar-card {
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .hero-guitars {
+    padding: 80px 0 60px;
+    text-align: center;
+  }
+  .guitars-gallery .guitar-card .guitar-content {
+    padding: 1rem;
+  }
+  .guitar-facts {
+    padding: 1.5rem;
+  }
+  .guitar-facts .fact-card {
+    margin-bottom: 1rem;
+  }
+}
